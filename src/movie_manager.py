@@ -29,9 +29,11 @@ class MovieManager:
         return movies
 
     def list_movies(self):
-        for movie in self.movies:
-            print(movie)
-            
+        if not self.movies:
+            print("No movies registered.")
+        else:
+            for index, movie in enumerate(self.movies, start=1):
+                print(f"{index}. {movie}")
 
     def add_movie(self, movie):
         self.movies.append(movie)
@@ -43,3 +45,11 @@ class MovieManager:
             writer.writerow(['title', 'genre', 'year'])
             for movie in self.movies:
                 writer.writerow([movie.title, movie.genre, movie.year])
+
+    def remove_movie(self, index):
+        if 1 <= index <= len(self.movies):
+            removed_movie = self.movies.pop(index - 1)
+            self.save_movies()
+            print(f"Movie '{removed_movie.title}' successfully removed!")
+        else:
+            print("Invalid index. Please try again.")

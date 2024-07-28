@@ -8,6 +8,7 @@ def main():
         print("--- Movie Manager ---\n")
         print("1. List movies")
         print("2. Add movie")
+        print("3. Remove movie")
         print("0. Exit")
 
         choice = input("Choose an option: ")
@@ -16,8 +17,8 @@ def main():
             manager.list_movies()
             
         elif choice == '2':
-            title = input("Enter title: ")
-            genre = input("Enter genre: ")
+            title = input("Enter title: ").strip()
+            genre = input("Enter genre: ").strip()
             year = int(input("Enter year: "))
             if not title or not genre or not year:
                 print("All fields (Title, Genre, Year) are mandatory. Try again.")
@@ -25,6 +26,14 @@ def main():
                 movie = Movie(title, genre, year)
                 manager.add_movie(movie)
                 print(f"Movie '{title}' added successfully!")
+                
+        elif choice == '3':
+          manager.list_movies()
+          try:
+              index = int(input("Index of the movie to be removed: "))
+              manager.remove_movie(index)
+          except ValueError:
+              print("Please enter a valid number. Try again.")
 
         elif choice == '0':
             print("Exit program... Goodbye!")
