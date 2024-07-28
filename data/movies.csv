@@ -1,11 +1,11 @@
-title                                         ,genre     ,year
-Inception                                     ,Sci-Fi    ,2010
-The Matrix                                    ,Sci-Fi    ,1999
-Interstellar                                  ,Sci-Fi    ,2014
-The Dark Knight                               ,Action    ,2008
-Gladiator                                     ,Drama     ,2000
-Eternal Sunshine of the Spotless Mind         ,Romance   ,2004
-Finding Nemo                                  ,Animation ,2003
-The Departed                                  ,Crime     ,2006
-Inglourious Basterds                          ,War       ,2009
-Spirited Away                                 ,Adventure ,2001
+title,genre,year
+Inception,Sci-Fi,2010
+The Matrix,Sci-Fi,1999
+Interstellar,Sci-Fi,2014
+The Dark Knight,Action,2008
+Gladiator,Drama,2000
+Eternal Sunshine of the Spotless Mind,Romance,2004
+Finding Nemo,Animation,2003
+The Departed,Crime,2006
+Inglourious Basterds,War,2009
+Spirited Away,Adventure,2001
