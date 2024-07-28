@@ -12,6 +12,7 @@ def main():
         print("4. Edit movie")
         print("5. Search movie")
         print("6. Sort movies")
+        print("7. Export movies")
         print("0. Exit")
 
         choice = input("Choose an option: ")
@@ -69,6 +70,13 @@ def main():
                 manager.sort_movies(criterion_index)
             except ValueError:
                 print("Please enter a valid number.")
+
+        elif choice == '7':
+            export_file = input("Enter the name of the export file (e.g. export_movies.csv): ").strip()
+            if not export_file.endswith('.csv'):
+                print("The file must have the extension .csv")
+            else:
+                manager.export_movies(export_file)
 
         elif choice == '0':
             print("Exit program... Goodbye!")

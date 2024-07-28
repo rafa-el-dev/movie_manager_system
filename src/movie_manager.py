@@ -86,3 +86,14 @@ class MovieManager:
             self.movies.sort(key=lambda movie: movie.year)
         else:
             print("Invalid criterion. Please use 1 (title), 2 (genre) or 3 (year). Try again.")
+
+    def export_movies(self, export_file):
+        try:
+            with open(export_file, 'w', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(['title', 'genre', 'year'])
+                for movie in self.movies:
+                    writer.writerow([movie.title, movie.genre, movie.year])
+            print(f"Movie list successfully exported to {export_file}!")
+        except Exception as e:
+            print(f"Error exporting movie list: {e}")
