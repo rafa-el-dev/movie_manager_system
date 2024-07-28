@@ -53,3 +53,14 @@ class MovieManager:
             print(f"Movie '{removed_movie.title}' successfully removed!")
         else:
             print("Invalid index. Please try again.")
+
+    def edit_movie(self, index, new_title, new_genre, new_year):
+        if 1 <= index <= len(self.movies):
+            movie = self.movies[index - 1]
+            movie.title = new_title
+            movie.genre = new_genre
+            movie.year = new_year
+            self.save_movies()
+            print(f"Movie edited successfully!")
+        else:
+            print("Invalid index. Please try again.")
