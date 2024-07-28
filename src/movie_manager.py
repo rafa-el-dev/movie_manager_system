@@ -76,3 +76,13 @@ class MovieManager:
                 print(movie)
         else:
             print(f"No movies found with the term '{term}'.")
+
+    def sort_movies(self, criterion_index):
+        if criterion_index == 1:
+            self.movies.sort(key=lambda movie: movie.title)
+        elif criterion_index == 2:
+            self.movies.sort(key=lambda movie: movie.genre)
+        elif criterion_index == 3:
+            self.movies.sort(key=lambda movie: movie.year)
+        else:
+            print("Invalid criterion. Please use 1 (title), 2 (genre) or 3 (year). Try again.")

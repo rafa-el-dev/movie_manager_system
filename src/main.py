@@ -11,6 +11,7 @@ def main():
         print("3. Remove movie")
         print("4. Edit movie")
         print("5. Search movie")
+        print("6. Sort movies")
         print("0. Exit")
 
         choice = input("Choose an option: ")
@@ -57,6 +58,17 @@ def main():
                 print("Search term cannot be empty. Try again.")
             else:
                 manager.search_movie(term)
+
+        elif choice == '6':
+            print("\nSorting criterion:")
+            print("1. Title")
+            print("2. Gender")
+            print("3. Year")
+            try:
+                criterion_index = int(input("Choose the sorting criterion (1, 2 or 3): "))
+                manager.sort_movies(criterion_index)
+            except ValueError:
+                print("Please enter a valid number.")
 
         elif choice == '0':
             print("Exit program... Goodbye!")
