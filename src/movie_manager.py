@@ -31,3 +31,15 @@ class MovieManager:
     def list_movies(self):
         for movie in self.movies:
             print(movie)
+            
+
+    def add_movie(self, movie):
+        self.movies.append(movie)
+        self.save_movies()
+
+    def save_movies(self):
+        with open(self.data_file, 'w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(['title', 'genre', 'year'])
+            for movie in self.movies:
+                writer.writerow([movie.title, movie.genre, movie.year])
