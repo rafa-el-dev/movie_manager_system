@@ -64,3 +64,15 @@ class MovieManager:
             print(f"Movie edited successfully!")
         else:
             print("Invalid index. Please try again.")
+
+    def search_movie(self, term):
+        term_lower = term.lower()
+        found_movies = [movie for movie in self.movies 
+                        if term_lower in movie.title.lower() 
+                        or term_lower in movie.genre.lower() 
+                        or term_lower in movie.year.lower()]
+        if found_movies:
+            for movie in found_movies:
+                print(movie)
+        else:
+            print(f"No movies found with the term '{term}'.")

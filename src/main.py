@@ -10,6 +10,7 @@ def main():
         print("2. Add movie")
         print("3. Remove movie")
         print("4. Edit movie")
+        print("5. Search movie")
         print("0. Exit")
 
         choice = input("Choose an option: ")
@@ -29,12 +30,12 @@ def main():
                 print(f"Movie '{title}' added successfully!")
 
         elif choice == '3':
-          manager.list_movies()
-          try:
-              index = int(input("Index of the movie to be removed: "))
-              manager.remove_movie(index)
-          except ValueError:
-              print("Please enter a valid number. Try again.")
+            manager.list_movies()
+            try:
+                index = int(input("Index of the movie to be removed: "))
+                manager.remove_movie(index)
+            except ValueError:
+                print("Please enter a valid number. Try again.")
 
         elif choice == '4':
             manager.list_movies()
@@ -49,6 +50,13 @@ def main():
                     manager.edit_movie(index, new_title, new_genre, new_year)
             except ValueError:
                 print("Please enter a valid number. Try again.")
+
+        elif choice == '5':
+            term = input("Enter the term to be searched (title, genre or year): ").strip()
+            if not term:
+                print("Search term cannot be empty. Try again.")
+            else:
+                manager.search_movie(term)
 
         elif choice == '0':
             print("Exit program... Goodbye!")
