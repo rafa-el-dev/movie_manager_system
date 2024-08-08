@@ -2,10 +2,10 @@ from movie_manager import MovieManager
 from movie import Movie
 
 def main():
-    manager = MovieManager('../data/movies.csv')
+    manager = MovieManager('data/movies.csv')
     
     while True:
-        print("--- Movie Manager ---\n")
+        print("\n--- Movie Manager ---\n")
         print("1. List movies")
         print("2. Add movie")
         print("3. Remove movie")
